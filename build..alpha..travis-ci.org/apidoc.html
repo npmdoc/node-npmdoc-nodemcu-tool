@@ -1,0 +1,2777 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/AndiDittrich/NodeMCU-Tool"
+
+    >nodemcu-tool (v2.0.4)</a>
+</h1>
+<h4>Command line tool to upload and manage files on your NodeMCU / ESP8266 Module.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nodemcu-tool">module nodemcu-tool</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.Connector">
+            function <span class="apidocSignatureSpan">nodemcu-tool.</span>Connector
+            <span class="apidocSignatureSpan">(devicename, baudrate)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.ScriptableSerialTerminal">
+            function <span class="apidocSignatureSpan">nodemcu-tool.</span>ScriptableSerialTerminal
+            <span class="apidocSignatureSpan">(delimiterSequence)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.SerialTerminal">
+            function <span class="apidocSignatureSpan">nodemcu-tool.</span>SerialTerminal
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.devices">
+            function <span class="apidocSignatureSpan">nodemcu-tool.</span>devices
+            <span class="apidocSignatureSpan">(showAll, jsonOutput)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.download">
+            function <span class="apidocSignatureSpan">nodemcu-tool.</span>download
+            <span class="apidocSignatureSpan">(remoteFile)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.fsinfo">
+            function <span class="apidocSignatureSpan">nodemcu-tool.</span>fsinfo
+            <span class="apidocSignatureSpan">(format)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.mkfs">
+            function <span class="apidocSignatureSpan">nodemcu-tool.</span>mkfs
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.onOutput">
+            function <span class="apidocSignatureSpan">nodemcu-tool.</span>onOutput
+            <span class="apidocSignatureSpan">(handler)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.remove">
+            function <span class="apidocSignatureSpan">nodemcu-tool.</span>remove
+            <span class="apidocSignatureSpan">(filename)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.reset">
+            function <span class="apidocSignatureSpan">nodemcu-tool.</span>reset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.run">
+            function <span class="apidocSignatureSpan">nodemcu-tool.</span>run
+            <span class="apidocSignatureSpan">(filename)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.setOptions">
+            function <span class="apidocSignatureSpan">nodemcu-tool.</span>setOptions
+            <span class="apidocSignatureSpan">(opt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.softreset">
+            function <span class="apidocSignatureSpan">nodemcu-tool.</span>softreset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.terminal">
+            function <span class="apidocSignatureSpan">nodemcu-tool.</span>terminal
+            <span class="apidocSignatureSpan">(initialCommand)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.upload">
+            function <span class="apidocSignatureSpan">nodemcu-tool.</span>upload
+            <span class="apidocSignatureSpan">(localFiles, options, onProgess)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodemcu-tool.</span>Connector.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodemcu-tool.</span>LuaCommandBuilder</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodemcu-tool.</span>LuaOptimizer</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodemcu-tool.</span>ScriptableSerialTerminal.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodemcu-tool.</span>SerialTerminal.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nodemcu-tool.Connector">module nodemcu-tool.Connector</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.Connector.Connector">
+            function <span class="apidocSignatureSpan">nodemcu-tool.</span>Connector
+            <span class="apidocSignatureSpan">(devicename, baudrate)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nodemcu-tool.Connector.prototype">module nodemcu-tool.Connector.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.Connector.prototype.checkConnection">
+            function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>checkConnection
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.Connector.prototype.compile">
+            function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>compile
+            <span class="apidocSignatureSpan">(remoteName, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.Connector.prototype.connect">
+            function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>connect
+            <span class="apidocSignatureSpan">(cb, applyConnectionCheck, connectDelay)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.Connector.prototype.deviceInfo">
+            function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>deviceInfo
+            <span class="apidocSignatureSpan">(showAll, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.Connector.prototype.disconnect">
+            function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>disconnect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.Connector.prototype.download">
+            function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>download
+            <span class="apidocSignatureSpan">(remoteName, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.Connector.prototype.executeCommand">
+            function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>executeCommand
+            <span class="apidocSignatureSpan">(cmd, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.Connector.prototype.fetchDeviceInfo">
+            function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>fetchDeviceInfo
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.Connector.prototype.format">
+            function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>format
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.Connector.prototype.fsinfo">
+            function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>fsinfo
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.Connector.prototype.onError">
+            function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>onError
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.Connector.prototype.removeFile">
+            function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>removeFile
+            <span class="apidocSignatureSpan">(remoteName, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.Connector.prototype.reset">
+            function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>reset
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.Connector.prototype.run">
+            function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>run
+            <span class="apidocSignatureSpan">(remoteName, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.Connector.prototype.softreset">
+            function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>softreset
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.Connector.prototype.upload">
+            function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>upload
+            <span class="apidocSignatureSpan">(localName, remoteName, options, completeCb, progressCb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nodemcu-tool.LuaCommandBuilder">module nodemcu-tool.LuaCommandBuilder</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.LuaCommandBuilder.prepare">
+            function <span class="apidocSignatureSpan">nodemcu-tool.LuaCommandBuilder.</span>prepare
+            <span class="apidocSignatureSpan">(commandName, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodemcu-tool.LuaCommandBuilder.</span>command</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nodemcu-tool.LuaOptimizer">module nodemcu-tool.LuaOptimizer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.LuaOptimizer.optimize">
+            function <span class="apidocSignatureSpan">nodemcu-tool.LuaOptimizer.</span>optimize
+            <span class="apidocSignatureSpan">(rawContent)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nodemcu-tool.ScriptableSerialTerminal">module nodemcu-tool.ScriptableSerialTerminal</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.ScriptableSerialTerminal.ScriptableSerialTerminal">
+            function <span class="apidocSignatureSpan">nodemcu-tool.</span>ScriptableSerialTerminal
+            <span class="apidocSignatureSpan">(delimiterSequence)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nodemcu-tool.ScriptableSerialTerminal.prototype">module nodemcu-tool.ScriptableSerialTerminal.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.ScriptableSerialTerminal.prototype.close">
+            function <span class="apidocSignatureSpan">nodemcu-tool.ScriptableSerialTerminal.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.ScriptableSerialTerminal.prototype.executeCommand">
+            function <span class="apidocSignatureSpan">nodemcu-tool.ScriptableSerialTerminal.prototype.</span>executeCommand
+            <span class="apidocSignatureSpan">(command, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.ScriptableSerialTerminal.prototype.flowcontrol">
+            function <span class="apidocSignatureSpan">nodemcu-tool.ScriptableSerialTerminal.prototype.</span>flowcontrol
+            <span class="apidocSignatureSpan">(options, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.ScriptableSerialTerminal.prototype.getNextResponse">
+            function <span class="apidocSignatureSpan">nodemcu-tool.ScriptableSerialTerminal.prototype.</span>getNextResponse
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.ScriptableSerialTerminal.prototype.onError">
+            function <span class="apidocSignatureSpan">nodemcu-tool.ScriptableSerialTerminal.prototype.</span>onError
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.ScriptableSerialTerminal.prototype.open">
+            function <span class="apidocSignatureSpan">nodemcu-tool.ScriptableSerialTerminal.prototype.</span>open
+            <span class="apidocSignatureSpan">(devicename, baudrate, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.ScriptableSerialTerminal.prototype.purge">
+            function <span class="apidocSignatureSpan">nodemcu-tool.ScriptableSerialTerminal.prototype.</span>purge
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.ScriptableSerialTerminal.prototype.write">
+            function <span class="apidocSignatureSpan">nodemcu-tool.ScriptableSerialTerminal.prototype.</span>write
+            <span class="apidocSignatureSpan">(data, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nodemcu-tool.SerialTerminal">module nodemcu-tool.SerialTerminal</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.SerialTerminal.SerialTerminal">
+            function <span class="apidocSignatureSpan">nodemcu-tool.</span>SerialTerminal
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nodemcu-tool.SerialTerminal.prototype">module nodemcu-tool.SerialTerminal.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.SerialTerminal.prototype.close">
+            function <span class="apidocSignatureSpan">nodemcu-tool.SerialTerminal.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.SerialTerminal.prototype.getDevice">
+            function <span class="apidocSignatureSpan">nodemcu-tool.SerialTerminal.prototype.</span>getDevice
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.SerialTerminal.prototype.onConnect">
+            function <span class="apidocSignatureSpan">nodemcu-tool.SerialTerminal.prototype.</span>onConnect
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemcu-tool.SerialTerminal.prototype.passthrough">
+            function <span class="apidocSignatureSpan">nodemcu-tool.SerialTerminal.prototype.</span>passthrough
+            <span class="apidocSignatureSpan">(devicename, baudrate, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nodemcu-tool" id="apidoc.module.nodemcu-tool">module nodemcu-tool</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.Connector" id="apidoc.element.nodemcu-tool.Connector">
+        function <span class="apidocSignatureSpan">nodemcu-tool.</span>Connector
+        <span class="apidocSignatureSpan">(devicename, baudrate)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NodeMcuConnector(devicename, baudrate){
+    // new terminal line sequence &#x22;\n\r&#x3e;&#x22;
+    this.device = new _virtualTerminal([13,10,62]);
+    this.errorHandler = null;
+    this.isConnected = false;
+    this.name = devicename;
+    this.baudrate = baudrate;
+    this.isHexWriteHelperUploaded = false;
+
+    // handle low level errors
+    this.device.onError(function(err){
+        // proxy
+        if (this.errorHandler){
+            this.errorHandler.apply(this, [err]);
+
+        // default: std logger
+        }else{
+            _logger.error(err);
+        }
+    }.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.ScriptableSerialTerminal" id="apidoc.element.nodemcu-tool.ScriptableSerialTerminal">
+        function <span class="apidocSignatureSpan">nodemcu-tool.</span>ScriptableSerialTerminal
+        <span class="apidocSignatureSpan">(delimiterSequence)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ScriptableSerialTerminal(delimiterSequence){
+    this.device = null;
+    this.inputbuffer = [];
+    this.waitingForInput = null;
+    this.errorHandler = null;
+    this.delimiterSequence = delimiterSequence;
+    this.encoding = &#x27;utf8&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.SerialTerminal" id="apidoc.element.nodemcu-tool.SerialTerminal">
+        function <span class="apidocSignatureSpan">nodemcu-tool.</span>SerialTerminal
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SerialTerminal(){
+    this.device = null;
+    this.errorHandler = null;
+    this.connectHandler = null;
+    this.encoding = &#x27;utf8&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.devices" id="apidoc.element.nodemcu-tool.devices">
+        function <span class="apidocSignatureSpan">nodemcu-tool.</span>devices
+        <span class="apidocSignatureSpan">(showAll, jsonOutput)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">devices = function (showAll, jsonOutput){
+    // create new connector
+    var connector = new _nodeMcuConnector(_options.device, _options.baudrate);
+
+    // retrieve the device list (not bound to an opened connection)
+    connector.deviceInfo(showAll, function(err, devices){
+        if (err){
+            _mculogger.error(&#x27;Cannot retrieve serial device list - &#x27; + err);
+        }else{
+
+            if (jsonOutput){
+                writeOutput(JSON.stringify(devices));
+            }else{
+                // just show complete message
+                if (devices.length == 0){
+                    _mculogger.error(&#x27;No Connected Devices found | Total: &#x27; + devices.length);
+                }else{
+                    _mculogger.log(&#x27;Connected Devices | Total: &#x27; + devices.length);
+
+                    // print fileinfo
+                    devices.forEach(function(device){
+                        writeOutput(&#x27;\t  |- &#x27; + device.comName + &#x27; (&#x27; + device.manufacturer + &#x27;, &#x27; + device.pnpId + &#x27;)&#x27;);
+                    });
+                }
+            }
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// json output mode
+.option(&#x27;--json&#x27;, &#x27;Display output JSON encoded&#x27;, false)
+
+
+.action(function(opt){
+    var options = cliPrepare(opt);
+
+    _nodemcutool.<span class="apidocCodeKeywordSpan">devices</span>(options.all, options.json);
+});
+
+_cli
+.command(&#x27;reset&#x27;)
+.description(&#x27;Execute a Hard-Reset of the Module using DTR/RTS reset circuit&#x27;)
+
+// softreset mode
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.download" id="apidoc.element.nodemcu-tool.download">
+        function <span class="apidocSignatureSpan">nodemcu-tool.</span>download
+        <span class="apidocSignatureSpan">(remoteFile)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">download = function (remoteFile){
+    // strip path
+    var localFilename = _path.basename(remoteFile);
+
+    // local file with same name already available ?
+    if (_fs.existsSync(remoteFile)){
+        // change filename
+        localFilename += &#x27;.&#x27; + (new Date().getTime());
+
+        _logger.log(&#x27;Local file &#x22;&#x27; + remoteFile + &#x27;&#x22; already exist - new file renamed to &#x22;&#x27; + localFilename + &#x27;&#x22;&#x27;);
+    }
+
+    // try to establish a connection to the module
+    getConnection(function(connector){
+        _logger.log(&#x27;Downloading &#x22;&#x27; + remoteFile + &#x27;&#x22; ...&#x27;);
+
+        connector.download(remoteFile,
+            // onComplete
+            function(err, filedata){
+                // finished!
+                connector.disconnect();
+
+                if (err){
+                    _logger.error(&#x27;Data Transfer FAILED!&#x27;);
+                }else{
+                    _logger.log(&#x27;Data Transfer complete!&#x27;);
+
+                    // store local file
+                    _fs.writeFileSync(localFilename, filedata);
+
+                    _logger.log(&#x27;File &#x22;&#x27; + localFilename + &#x27;&#x22; created&#x27;);
+                }
+            }
+        );
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+_cli
+.command(&#x27;download &#x3c;file&#x3e;&#x27;)
+.description(&#x27;Download files from NodeMCU (ESP8266) target&#x27;)
+
+.action(function(remoteFilename, opt){
+    var options = cliPrepare(opt);
+
+    _nodemcutool.<span class="apidocCodeKeywordSpan">download</span>(remoteFilename);
+});
+
+_cli
+.command(&#x27;remove &#x3c;file&#x3e;&#x27;)
+.description(&#x27;Removes a file from NodeMCU filesystem&#x27;)
+.action(function(filename, opt){
+    var options = cliPrepare(opt);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.fsinfo" id="apidoc.element.nodemcu-tool.fsinfo">
+        function <span class="apidocSignatureSpan">nodemcu-tool.</span>fsinfo
+        <span class="apidocSignatureSpan">(format)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fsinfo = function (format){
+
+    // try to establish a connection to the module
+    getConnection(function(connector){
+
+        connector.fsinfo(function(err, meta, files){
+
+            // finished!
+            connector.disconnect();
+
+            if (err){
+                _logger.error(err);
+            }else{
+
+                // json output - third party applications
+                if (format == &#x27;json&#x27;) {
+                    writeOutput(JSON.stringify({
+                        files: files,
+                        meta: meta
+                    }));
+
+                // raw format - suitable for use in bash scripts
+                }else if (format == &#x27;raw&#x27;){
+                    // print fileinfo
+                    files.forEach(function(file){
+                        writeOutput(file.name);
+                    });
+
+                }else{
+                    _mculogger.log(&#x27;Free Disk Space: &#x27; + meta.remaining + &#x27; KB | Total: &#x27; + meta.total + &#x27; KB | &#x27; + files.length
+ + &#x27; Files&#x27;);
+
+                    // files found ?
+                    if (files.length==0){
+                        _mculogger.log(&#x27;No Files found - have you created the file-system?&#x27;);
+                    }else{
+                        _mculogger.log(&#x27;Files stored into Flash (SPIFFS)&#x27;);
+
+                        // print fileinfo
+                        files.forEach(function(file){
+                            writeOutput(&#x27;\t  |- &#x27; + file.name + &#x27; (&#x27; + file.size + &#x27; Bytes)&#x27;);
+                        });
+                    }
+                }
+            }
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+
+    // raw format (text)
+    if (options.raw){
+        format = &#x27;raw&#x27;;
+    }
+
+    _nodemcutool.<span class="apidocCodeKeywordSpan">fsinfo</span>(format);
+});
+
+_cli
+.command(&#x27;run &#x3c;file&#x3e;&#x27;)
+.description(&#x27;Executes an existing .lua or .lc file on NodeMCU&#x27;)
+.action(function(filename, opt){
+    var options = cliPrepare(opt);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.mkfs" id="apidoc.element.nodemcu-tool.mkfs">
+        function <span class="apidocSignatureSpan">nodemcu-tool.</span>mkfs
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mkfs = function (){
+
+    // try to establish a connection to the module
+    getConnection(function(connector){
+
+        _mculogger.log(&#x27;Formatting the file system...this will take around ~30s&#x27;);
+
+        connector.format(function(err, response){
+            // finished!
+            connector.disconnect();
+
+            if (err){
+                _mculogger.error(&#x27;Formatting failed - &#x27; + err);
+            }else{
+                // just show complete message
+                _mculogger.log(&#x27;File System created | &#x27; + response);
+            }
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    .action(function(opt){
+var options = cliPrepare(opt);
+
+// no prompt!
+if (opt.noninteractive){
+    // format
+    _nodemcutool.<span class="apidocCodeKeywordSpan">mkfs</span>();
+
+    return;
+}
+
+// user confirmation required!
+_prompt.start();
+_prompt.message = &#x27;&#x27;;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.onOutput" id="apidoc.element.nodemcu-tool.onOutput">
+        function <span class="apidocSignatureSpan">nodemcu-tool.</span>onOutput
+        <span class="apidocSignatureSpan">(handler)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onOutput = function (handler) {
+    outputHandler = handler;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    // errors
+}else{
+    console.log(_colors.red(&#x27;[&#x27; + facility.trim() + &#x27;]&#x27;), args.join(&#x27; &#x27;));
+}
+});
+
+// general content
+_nodemcutool.<span class="apidocCodeKeywordSpan">onOutput</span>(function(message){
+console.log(message);
+});
+
+function cliPrepare(options){
+// default
+options = options || {};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.remove" id="apidoc.element.nodemcu-tool.remove">
+        function <span class="apidocSignatureSpan">nodemcu-tool.</span>remove
+        <span class="apidocSignatureSpan">(filename)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">remove = function (filename){
+
+    // try to establish a connection to the module
+    getConnection(function(connector){
+        connector.removeFile(filename, function(err){
+            // finished!
+            connector.disconnect();
+
+            if (err){
+                _mculogger.error(err);
+            }else{
+                // just show complete message (no feedback from nodemcu)
+                _mculogger.log(&#x27;File &#x22;&#x27; + filename + &#x27;&#x22; removed!&#x27;);
+            }
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+_cli
+.command(&#x27;remove &#x3c;file&#x3e;&#x27;)
+.description(&#x27;Removes a file from NodeMCU filesystem&#x27;)
+.action(function(filename, opt){
+    var options = cliPrepare(opt);
+
+    _nodemcutool.<span class="apidocCodeKeywordSpan">remove</span>(filename);
+});
+
+_cli
+.command(&#x27;mkfs&#x27;)
+.description(&#x27;Format the SPIFFS filesystem - ALL FILES ARE REMOVED&#x27;)
+
+// force fs creation without prompt
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.reset" id="apidoc.element.nodemcu-tool.reset">
+        function <span class="apidocSignatureSpan">nodemcu-tool.</span>reset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function (){
+
+    // create new connector
+    var connector = new _nodeMcuConnector(_options.device, _options.baudrate);
+
+    // open connection without connection check
+    connector.connect(function(error, response){
+        if (error) {
+            _logger.error(&#x27;Unable to establish connection - &#x27; + error);
+        }else{
+            // status message
+            _logger.log(&#x27;Connected&#x27;);
+
+            // execute reset
+            connector.reset(function(err){
+                // finished!
+                connector.disconnect();
+
+                if (err){
+                    _mculogger.error(err);
+                }else{
+                    _mculogger.log(&#x27;Hard-Reset executed (100ms)&#x27;);
+                }
+            })
+        }
+    }, false);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    // software reset
+    if (options.softreset){
+        _nodemcutool.softreset();
+
+    // hard-reset nRST
+    }else{
+        _nodemcutool.<span class="apidocCodeKeywordSpan">reset</span>();
+    }
+
+});
+
+_cli
+.command(&#x27;*&#x27;)
+.action(function(c){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.run" id="apidoc.element.nodemcu-tool.run">
+        function <span class="apidocSignatureSpan">nodemcu-tool.</span>run
+        <span class="apidocSignatureSpan">(filename)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function (filename){
+
+    // try to establish a connection to the module
+    getConnection(function(connector){
+        connector.run(filename, function(err, output){
+            // finished!
+            connector.disconnect();
+
+            if (err){
+                _mculogger.error(err);
+            }else{
+                // show command response
+                _mculogger.log(&#x27;Running &#x22;&#x27; + filename + &#x27;&#x22;&#x27;);
+                _mculogger.log(&#x27;&#x3e;-----------------------------&#x3e;&#x27;);
+                writeOutput(output);
+                _mculogger.log(&#x27;&#x3e;-----------------------------&#x3e;&#x27;);
+            }
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+_cli
+.command(&#x27;run &#x3c;file&#x3e;&#x27;)
+.description(&#x27;Executes an existing .lua or .lc file on NodeMCU&#x27;)
+.action(function(filename, opt){
+    var options = cliPrepare(opt);
+
+    _nodemcutool.<span class="apidocCodeKeywordSpan">run</span>(filename);
+});
+
+_cli
+.command(&#x27;upload [files...]&#x27;)
+.description(&#x27;Upload Files to NodeMCU (ESP8266) target&#x27;)
+
+// file cleanup
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.setOptions" id="apidoc.element.nodemcu-tool.setOptions">
+        function <span class="apidocSignatureSpan">nodemcu-tool.</span>setOptions
+        <span class="apidocSignatureSpan">(opt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setOptions = function (opt){
+    // merge with default options
+    Object.keys(_options).forEach(function(key){
+        _options[key] = opt[key] || _options[key];
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            defaultConfig.keeppath = (d.keeppath &#x26;&#x26; d.keeppath === true);
+            _logger.log(&#x27;Project based configuration loaded&#x27;);
+        }
+    }catch (err){
+    }
+
+    // set port/baud options
+    _nodemcutool.<span class="apidocCodeKeywordSpan">setOptions</span>({
+        device: defaultConfig.port,
+        baudrate: defaultConfig.baudrate,
+        connectionDelay: defaultConfig.connectionDelay
+    });
+
+    return defaultConfig;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.softreset" id="apidoc.element.nodemcu-tool.softreset">
+        function <span class="apidocSignatureSpan">nodemcu-tool.</span>softreset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">softreset = function (){
+
+    // try to establish a connection to the module
+    getConnection(function(connector){
+
+        connector.softreset(function(err){
+            // finished!
+            connector.disconnect();
+
+            if (err){
+                _mculogger.error(err);
+            }else{
+                _mculogger.log(&#x27;Soft-Reset executed (node.restart())&#x27;);
+            }
+        });
+
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+.action(function(opt){
+    var options = cliPrepare(opt);
+
+    // software reset
+    if (options.softreset){
+        _nodemcutool.<span class="apidocCodeKeywordSpan">softreset</span>();
+
+    // hard-reset nRST
+    }else{
+        _nodemcutool.reset();
+    }
+
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.terminal" id="apidoc.element.nodemcu-tool.terminal">
+        function <span class="apidocSignatureSpan">nodemcu-tool.</span>terminal
+        <span class="apidocSignatureSpan">(initialCommand)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">terminal = function (initialCommand){
+    // create new connector
+    var terminal = new _serialTerminal();
+
+    _terminallogger.log(&#x27;Starting Terminal Mode - press ctrl+c to exit&#x27;);
+
+    // run initial command before starting terminal session ?
+    if (initialCommand){
+        terminal.onConnect(function(device){
+            device.write(initialCommand + &#x27;\n&#x27;);
+        });
+    }
+
+    // start
+    terminal.passthrough(_options.device, _options.baudrate, function(err){
+        if (err){
+            _terminallogger.error(err);
+        }else{
+            _terminallogger.log(&#x27;Connection closed&#x27;);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    // run a initial command on startup ?
+    var initialCommand = null;
+    if (options.run){
+        initialCommand = _luaCommandBuilder.prepare(&#x27;run&#x27;, [options.run]);
+    }
+
+    // start terminal session
+    _nodemcutool.<span class="apidocCodeKeywordSpan">terminal</span>(initialCommand);
+});
+
+_cli
+.command(&#x27;init&#x27;)
+.description(&#x27;Initialize a project-based Configuration (file) within current directory&#x27;)
+.action(function(opt){
+    var options = cliPrepare(opt);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.upload" id="apidoc.element.nodemcu-tool.upload">
+        function <span class="apidocSignatureSpan">nodemcu-tool.</span>upload
+        <span class="apidocSignatureSpan">(localFiles, options, onProgess)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">upload = function (localFiles, options, onProgess){
+
+    // the index of the current uploaded file
+    var fileUploadIndex = 0;
+
+    var uploadFile = function(connector, localFile, remoteFilename, onComplete){
+
+        // increment upload index
+        fileUploadIndex++;
+
+        // get file stats
+        try{
+            var fileInfo = _fs.statSync(localFile);
+
+            // check if file is directory
+            if (fileInfo.isDirectory()) {
+                _mculogger.error(&#x27;Path &#x22;&#x27; + localFile + &#x27;&#x22; is a directory.&#x27;);
+                onComplete();
+                return;
+            }
+
+        // local file available
+        } catch (err){
+            _logger.error(&#x27;Local file not found &#x22;&#x27; + localFile + &#x27;&#x22; skipping...&#x27;);
+            onComplete();
+            return;
+        }
+
+        // display filename
+        _logger.log(&#x27;Uploading &#x22;&#x27; + localFile + &#x27;&#x22; &#x3e;&#x3e; &#x22;&#x27; + remoteFilename + &#x27;&#x22;...&#x27;);
+
+        // trigger a progress update
+        onProgess(0, fileInfo.size, fileUploadIndex);
+
+        // normalize the remote filename (strip relative parts)
+        remoteFilename = remoteFilename.replace(/\.\.\//g, &#x27;&#x27;).replace(/\.\./g, &#x27;&#x27;).replace(/^\.\//, &#x27;&#x27;);
+
+        // delete old file (may existent)
+        connector.removeFile(remoteFilename, function(err){
+
+            // handle error
+            if (err){
+                connector.disconnect();
+                _logger.error(err);
+                return;
+            }
+
+            // start the file transfer
+            connector.upload(localFile, remoteFilename, options,
+
+                // onComplete
+                function(err){
+
+                    // handle error
+                    if (err){
+                        connector.disconnect();
+                        _logger.error(err);
+                        return;
+                    }
+
+                    // compile flag set ? and is a lua file ?
+                    if (options.compile &#x26;&#x26; _path.extname(localFile).toLowerCase() == &#x27;.lua&#x27;){
+                        _mculogger.log(&#x27; |- compiling lua file..&#x27;);
+
+                        connector.compile(remoteFilename, function(error){
+                            // success ? empty line will return (null)
+                            if (error){
+                                connector.disconnect();
+                                _mculogger.error(&#x27;Error: &#x27; + error);
+                            }else{
+                                _mculogger.log(&#x27; |- success&#x27;);
+
+                                // drop original lua file
+                                connector.removeFile(remoteFilename, function(error){
+
+                                    if (error){
+                                        connector.disconnect();
+                                        _mculogger.error(&#x27;Error: &#x27; + error);
+                                        return;
+                                    }
+
+                                    _mculogger.log(&#x27; |- original Lua file removed&#x27;);
+                                    onComplete();
+                                });
+                            }
+                        });
+                    }else{
+                        // directly call complete handler
+                        onComplete();
+                    }
+                },
+
+                // on progress handler
+                function(current, total){
+                    // proxy and append file-number
+                    onProgess(current, total, fileUploadIndex);
+                }
+            );
+        });
+    };
+
+    // try to establish a connection to the module
+    getConnection(function(connector){
+
+        // single file upload ?
+        if (localFiles.length == 1){
+            // extract first element
+            var localFile = localFiles[0];
+
+            // filename defaults to original filename minus path.
+            // this behaviour can be overridden by --keeppath and --remotename options
+            var remoteFile = options.remotename ? options.remotename : (options.keeppath ? localFile : _path.basename(localFile));
+
+            // start single file upload ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+_logger.error(&#x27;No files provided for upload (empty file-list)&#x27;);
+return;
+        }
+
+        // handle multiple uploads
+        var currentFileNumber = 0;
+
+        _nodemcutool.<span class="apidocCodeKeywordSpan">upload</span>(localFiles, options, function(current, total, fileNumber){
+
+// new file ?
+if (currentFileNumber != fileNumber){
+    bar.stop();
+    currentFileNumber = fileNumber;
+    bar.start(total, 1);
+}else{
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nodemcu-tool.Connector" id="apidoc.module.nodemcu-tool.Connector">module nodemcu-tool.Connector</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.Connector.Connector" id="apidoc.element.nodemcu-tool.Connector.Connector">
+        function <span class="apidocSignatureSpan">nodemcu-tool.</span>Connector
+        <span class="apidocSignatureSpan">(devicename, baudrate)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NodeMcuConnector(devicename, baudrate){
+    // new terminal line sequence &#x22;\n\r&#x3e;&#x22;
+    this.device = new _virtualTerminal([13,10,62]);
+    this.errorHandler = null;
+    this.isConnected = false;
+    this.name = devicename;
+    this.baudrate = baudrate;
+    this.isHexWriteHelperUploaded = false;
+
+    // handle low level errors
+    this.device.onError(function(err){
+        // proxy
+        if (this.errorHandler){
+            this.errorHandler.apply(this, [err]);
+
+        // default: std logger
+        }else{
+            _logger.error(err);
+        }
+    }.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nodemcu-tool.Connector.prototype" id="apidoc.module.nodemcu-tool.Connector.prototype">module nodemcu-tool.Connector.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.Connector.prototype.checkConnection" id="apidoc.element.nodemcu-tool.Connector.prototype.checkConnection">
+        function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>checkConnection
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">checkConnection = function (cb){
+
+    // 1.5s connection timeout
+    var watchdog = setTimeout(function(){
+        // stop
+        watchdog = null;
+
+        // throw error
+        cb(&#x27;Timeout, no response detected - is NodeMCU online and the Lua interpreter ready ?&#x27;);
+    }, 1500);
+
+    // proxy function to stop timer
+    var ready = function(err){
+        // watchdog active ?
+        if (watchdog !== null){
+            // stop watchdog
+            clearTimeout(watchdog);
+
+            // run callback
+            cb(err);
+        }
+    };
+
+    // send a simple print command to the lua engine
+    this.device.executeCommand(_luaCommandBuilder.command.echo, function(err, echo, output){
+        if (err){
+            ready(err);
+        }else{
+            // validate command echo and command output
+            if (output == &#x27;echo1337&#x27; &#x26;&#x26; echo == &#x27;print(&#x22;echo1337&#x22;)&#x27;) {
+                ready(null);
+            } else {
+                ready(&#x27;No response detected - is NodeMCU online and the Lua interpreter ready ?&#x27;)
+            }
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.Connector.prototype.compile" id="apidoc.element.nodemcu-tool.Connector.prototype.compile">
+        function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>compile
+        <span class="apidocSignatureSpan">(remoteName, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compile = function (remoteName, cb){
+    // check connect flag
+    if (!this.isConnected){
+        cb(&#x27;Cannot compile remote file - device offline&#x27;, null);
+        return;
+    }
+
+    // run the lua compiler/interpreter to cache the file as bytecode
+    this.device.executeCommand(_luaCommandBuilder.prepare(&#x27;compile&#x27;, [remoteName]), function(err, echo, response){
+        if (err){
+            cb(&#x27;IO Error - &#x27; + err, null);
+        }else{
+            cb(null, response);
+        }
+    }.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// file system info
+fsInfo: &#x27;print(file.fsinfo())&#x27;,
+
+// format the file system
+fsFormat: &#x27;file.format()&#x27;,
+
+// compile a remote file
+compile: &#x27;node.<span class="apidocCodeKeywordSpan">compile</span>(&#x22;?&#x22;)&#x27;,
+
+// run a file
+run: &#x27;dofile(&#x22;?&#x22;)&#x27;,
+
+// soft-reset
+reset: &#x27;node.restart()&#x27;,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.Connector.prototype.connect" id="apidoc.element.nodemcu-tool.Connector.prototype.connect">
+        function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>connect
+        <span class="apidocSignatureSpan">(cb, applyConnectionCheck, connectDelay)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (cb, applyConnectionCheck, connectDelay){
+
+    // try to open the device
+    this.device.open(this.name, this.baudrate, function(error){
+        if (error){
+            cb(&#x27;Cannot open port &#x22;&#x27; + this.name + &#x27;&#x22;&#x27;, null);
+        }else{
+            // skip connection check ?
+            if (applyConnectionCheck === false){
+                // set connect flag
+                this.isConnected = true;
+
+                // run callback
+                cb(null, &#x27;Skipping Connection Check..&#x27;);
+                return;
+            }
+
+            var checkConnection = function(){
+                this.checkConnection(function(error){
+                    if (error){
+                        cb(error, null);
+                    }else{
+                        this.isConnected = true;
+
+                        // print data
+                        this.fetchDeviceInfo(function(error, data){
+                            if (error){
+                                cb(error, null);
+                            }else{
+                                // show nodemcu device info
+                                cb(null, &#x27;Version: &#x27; + data.version + &#x27; | ChipID: 0x&#x27; + data.chipID + &#x27; | FlashID: 0x&#x27; + data.flashID
+);
+                            }
+                        });
+                    }
+                }.bind(this));
+            }.bind(this);
+
+            // delay the connection process ? may fix issues related to rebooting modules
+            if (connectDelay &#x26;&#x26; connectDelay &#x3e; 1){
+                setTimeout(function(){
+
+                    // send dummy sequence
+                    this.device.write(&#x27;\n\n\n&#x27;  + _luaCommandBuilder.command.echo + &#x27;\n\n\n&#x27; , function(){
+
+                        // wait 1/3 to get the dummy sequence processed
+                        setTimeout(function(){
+
+                            // send dummy sequence
+                            this.device.write(&#x27;\n\n\n&#x27;  + _luaCommandBuilder.command.echo + &#x27;\n\n\n&#x27; , function(){
+
+                                // wait 1/3 to get the dummy sequence processed
+                                setTimeout(function(){
+
+                                    // purge received data
+                                    this.device.purge(function(){
+                                        // connection startup
+                                        checkConnection();
+                                    }.bind(this));
+
+                                }.bind(this), connectDelay);
+
+                            }.bind(this));
+
+                        }.bind(this), connectDelay);
+
+                    }.bind(this));
+
+                // 2/3 timeout
+                }.bind(this), connectDelay);
+            }else{
+                checkConnection();
+            }
+        }
+    }.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.Connector.prototype.deviceInfo" id="apidoc.element.nodemcu-tool.Connector.prototype.deviceInfo">
+        function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>deviceInfo
+        <span class="apidocSignatureSpan">(showAll, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deviceInfo = function (showAll, cb){
+    // get all available serial ports
+    _serialport.list(function (err, ports){
+        // error occurred ?
+        if (err){
+            cb(err);
+            return;
+        }
+
+        // default condition
+        ports = ports || [];
+
+        // just pass-through
+        if (showAll){
+            cb(null, ports);
+
+            // filter by vendorIDs
+            // NodeMCU v1.0 - CH341 Adapter | 0x1a86  QinHeng Electronics
+            // NodeMCU v1.1 - CP2102 Adapter | 0x10c4  Cygnal Integrated Products, Inc
+        }else{
+            cb(null, ports.filter(function(item){
+                return (item.vendorId == &#x27;0x1a86&#x27; || item.vendorId == &#x27;0x10c4&#x27;);
+            }));
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.Connector.prototype.disconnect" id="apidoc.element.nodemcu-tool.Connector.prototype.disconnect">
+        function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>disconnect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">disconnect = function (){
+    this.isConnected = false;
+    this.device.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.Connector.prototype.download" id="apidoc.element.nodemcu-tool.Connector.prototype.download">
+        function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>download
+        <span class="apidocSignatureSpan">(remoteName, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">download = function (remoteName, cb){
+    // check connect flag
+    if (!this.isConnected){
+        cb(&#x27;Cannot download file - device offline&#x27;, null);
+        return;
+    }
+
+    // transfer helper function to encode hex data
+    this.device.executeCommand(_luaCommandBuilder.command.hexReadHelper, function(err, echo, response) {
+        // successful opened ?
+        if (err) {
+            cb(&#x27;Cannot transfer hex.encode helper function - &#x27; + err);
+            return;
+        }
+
+        // open remote file for write
+        this.device.executeCommand(_luaCommandBuilder.prepare(&#x27;fileOpen&#x27;, [remoteName, &#x27;r&#x27;]), function(err, echo, response){
+            // successful opened ?
+            if (err || response == &#x27;nil&#x27;){
+                cb(&#x27;Cannot open remote file &#x22;&#x27; + remoteName + &#x27;&#x22; for read - &#x27; + err);
+                return;
+            }
+
+            // write first element to file
+            this.device.executeCommand(&#x27;__hexread()&#x27;, function(err, echo, filecontent){
+                if (err){
+                    cb(&#x27;Cannot read remote file content - &#x27; + err, null);
+                    return;
+                }
+
+                // decode file content
+                var data = new Buffer(filecontent, &#x27;hex&#x27;);
+
+                // send file close command
+                this.device.executeCommand(_luaCommandBuilder.command.fileClose, function(err, echo, response){
+                    if (err){
+                        cb(&#x27;Cannot close remote file - &#x27; + err, null);
+                    }else{
+                        cb(null, data);
+                    }
+                });
+
+            }.bind(this));
+
+        }.bind(this));
+
+    }.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+_cli
+.command(&#x27;download &#x3c;file&#x3e;&#x27;)
+.description(&#x27;Download files from NodeMCU (ESP8266) target&#x27;)
+
+.action(function(remoteFilename, opt){
+    var options = cliPrepare(opt);
+
+    _nodemcutool.<span class="apidocCodeKeywordSpan">download</span>(remoteFilename);
+});
+
+_cli
+.command(&#x27;remove &#x3c;file&#x3e;&#x27;)
+.description(&#x27;Removes a file from NodeMCU filesystem&#x27;)
+.action(function(filename, opt){
+    var options = cliPrepare(opt);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.Connector.prototype.executeCommand" id="apidoc.element.nodemcu-tool.Connector.prototype.executeCommand">
+        function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>executeCommand
+        <span class="apidocSignatureSpan">(cmd, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">executeCommand = function (cmd, cb){
+    // check connect flag
+    if (!this.isConnected){
+        cb(&#x27;Cannot execute remote file - device offline&#x27;, null);
+        return;
+    }
+
+    // run the lua interpreter
+    this.device.executeCommand(cmd, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.Connector.prototype.fetchDeviceInfo" id="apidoc.element.nodemcu-tool.Connector.prototype.fetchDeviceInfo">
+        function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>fetchDeviceInfo
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fetchDeviceInfo = function (cb){
+    // run the node.info() command
+    this.device.executeCommand(_luaCommandBuilder.command.nodeInfo, function(err, echo, data){
+        if (err){
+            cb(err);
+        }else {
+            // replace whitespaces with single delimiter
+            var p = data.replace(/\s+/gi, &#x27;-&#x27;).split(&#x27;-&#x27;);
+
+            if (p.length != 8) {
+                cb(&#x27;Invalid node.info() Response: &#x27; + data, null);
+            } else {
+                // process data
+                cb(null, {
+                    version: p[0] + &#x27;.&#x27; + p[1] + &#x27;.&#x27; + p[2],
+                    chipID: parseInt(p[3]).toString(16),
+                    flashID: parseInt(p[4]).toString(16),
+                    flashsize: p[5] + &#x27;kB&#x27;,
+                    flashmode: p[6],
+                    flashspeed: parseInt(p[7]) / 1000000 + &#x27;MHz&#x27;
+                });
+            }
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.Connector.prototype.format" id="apidoc.element.nodemcu-tool.Connector.prototype.format">
+        function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>format
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">format = function (cb){
+    // check connect flag
+    if (!this.isConnected){
+        cb(&#x27;Cannot format file system - device offline&#x27;, null);
+        return;
+    }
+
+    // get file system info (size)
+    this.device.executeCommand(_luaCommandBuilder.command.fsFormat, function(err, echo, response){
+        if (err){
+            cb(&#x27;IO Error - &#x27; + err, null);
+        }else{
+            cb(null, response);
+        }
+    }.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// info command (flash id)
+nodeInfo: &#x27;print(node.info());&#x27;,
+
+// file system info
+fsInfo: &#x27;print(file.fsinfo())&#x27;,
+
+// format the file system
+fsFormat: &#x27;file.<span class="apidocCodeKeywordSpan">format</span>()&#x27;,
+
+// compile a remote file
+compile: &#x27;node.compile(&#x22;?&#x22;)&#x27;,
+
+// run a file
+run: &#x27;dofile(&#x22;?&#x22;)&#x27;,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.Connector.prototype.fsinfo" id="apidoc.element.nodemcu-tool.Connector.prototype.fsinfo">
+        function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>fsinfo
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fsinfo = function (cb){
+    // check connect flag
+    if (!this.isConnected){
+        cb(&#x27;Cannot fetch file system info - device offline&#x27;, null);
+        return;
+    }
+
+    // get file system info (size)
+    this.device.executeCommand(_luaCommandBuilder.command.fsInfo, function(err, echo, response){
+        if (err){
+            cb(&#x27;Cannot fetch file system metadata - &#x27; + err, null);
+            return;
+        }
+
+        // extract size (remaining, used, total)
+        response = response.replace(/\s+/gi, &#x27;-&#x27;).split(&#x27;-&#x27;);
+
+        var toKB = function(s){
+            return parseInt((parseInt(s)/1024));
+        };
+
+        var meta = {
+            remaining: toKB(response[0]),
+            used: toKB(response[1]),
+            total: toKB(response[2])
+        };
+
+        // print a full file-list including size
+        this.device.executeCommand(_luaCommandBuilder.command.listFiles, function(err, echo, response){
+            if (err){
+                cb(&#x27;Cannot obtain file-list - &#x27; + err, null);
+                return;
+            }
+
+            // file-list to return
+            var files = [];
+
+            // files available (list not empty) ?
+            if (response.length &#x3e; 0){
+                // split the file-list by &#x22;;&#x22;
+                var entries = response.trim().split(&#x27;;&#x27;);
+
+                // process each entry
+                entries.forEach(function(entry){
+                    // entry format: &#x3c;name&#x3e;:&#x3c;size&#x3e;
+                    var matches = /^(.*):(\d+)$/gi.exec(entry);
+
+                    // valid format ?
+                    if (matches){
+                        // append file entry to list
+                        files.push({
+                            name: matches[1],
+                            size: parseInt(matches[2])
+                        });
+                    }
+                });
+            }
+
+            // run callback
+            cb(null, meta, files);
+        });
+    }.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+
+    // raw format (text)
+    if (options.raw){
+        format = &#x27;raw&#x27;;
+    }
+
+    _nodemcutool.<span class="apidocCodeKeywordSpan">fsinfo</span>(format);
+});
+
+_cli
+.command(&#x27;run &#x3c;file&#x3e;&#x27;)
+.description(&#x27;Executes an existing .lua or .lc file on NodeMCU&#x27;)
+.action(function(filename, opt){
+    var options = cliPrepare(opt);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.Connector.prototype.onError" id="apidoc.element.nodemcu-tool.Connector.prototype.onError">
+        function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>onError
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onError = function (cb){
+    this.errorHandler = cb;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.Connector.prototype.removeFile" id="apidoc.element.nodemcu-tool.Connector.prototype.removeFile">
+        function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>removeFile
+        <span class="apidocSignatureSpan">(remoteName, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeFile = function (remoteName, cb){
+    // check connect flag
+    if (!this.isConnected){
+        cb(&#x27;Cannot remove remote file - device offline&#x27;, null);
+        return;
+    }
+
+    // get file system info (size)
+    this.device.executeCommand(_luaCommandBuilder.prepare(&#x27;fileRemove&#x27;, [remoteName]), function(err, echo, response){
+        if (err){
+            cb(&#x27;IO Error - &#x27; + err, null);
+        }else{
+            cb(null, response);
+        }
+    }.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.Connector.prototype.reset" id="apidoc.element.nodemcu-tool.Connector.prototype.reset">
+        function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>reset
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function (cb){
+    // check connect flag
+    if (!this.isConnected){
+        cb(&#x27;Cannot reset module - device offline&#x27;, null);
+        return;
+    }
+
+    var d = this.device;
+
+    // pull down RST pin using the reset circuit
+    d.flowcontrol({
+        dtr: false,
+        rts: true
+    }, function(err){
+        if (err){
+            cb(err);
+
+            // restore previous state after 100ms
+        }else{
+            setTimeout(function(){
+                d.flowcontrol({
+                    dtr: false,
+                    rts: false
+                }, cb);
+            }, 100);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    // software reset
+    if (options.softreset){
+        _nodemcutool.softreset();
+
+    // hard-reset nRST
+    }else{
+        _nodemcutool.<span class="apidocCodeKeywordSpan">reset</span>();
+    }
+
+});
+
+_cli
+.command(&#x27;*&#x27;)
+.action(function(c){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.Connector.prototype.run" id="apidoc.element.nodemcu-tool.Connector.prototype.run">
+        function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>run
+        <span class="apidocSignatureSpan">(remoteName, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function (remoteName, cb){
+    // check connect flag
+    if (!this.isConnected){
+        cb(&#x27;Cannot execute remote file - device offline&#x27;, null);
+        return;
+    }
+
+    // run the lua compiler/interpreter to cache the file as bytecode
+    this.device.executeCommand(_luaCommandBuilder.prepare(&#x27;run&#x27;, [remoteName]), function(err, echo, response){
+        if (err){
+            cb(&#x27;IO Error - &#x27; + err, null);
+        }else{
+            cb(null, response);
+        }
+
+    }.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+_cli
+.command(&#x27;run &#x3c;file&#x3e;&#x27;)
+.description(&#x27;Executes an existing .lua or .lc file on NodeMCU&#x27;)
+.action(function(filename, opt){
+    var options = cliPrepare(opt);
+
+    _nodemcutool.<span class="apidocCodeKeywordSpan">run</span>(filename);
+});
+
+_cli
+.command(&#x27;upload [files...]&#x27;)
+.description(&#x27;Upload Files to NodeMCU (ESP8266) target&#x27;)
+
+// file cleanup
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.Connector.prototype.softreset" id="apidoc.element.nodemcu-tool.Connector.prototype.softreset">
+        function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>softreset
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">softreset = function (cb){
+    // check connect flag
+    if (!this.isConnected){
+        cb(&#x27;Cannot reset module - device offline&#x27;, null);
+        return;
+    }
+
+    // transfer helper function to encode hex data
+    this.device.executeCommand(_luaCommandBuilder.command.reset, function(err, echo, response) {
+        // successful opened ?
+        if (err) {
+            cb(&#x27;Cannot execute soft-reset command - &#x27; + err);
+            return;
+        }
+
+        cb(null);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+.action(function(opt){
+    var options = cliPrepare(opt);
+
+    // software reset
+    if (options.softreset){
+        _nodemcutool.<span class="apidocCodeKeywordSpan">softreset</span>();
+
+    // hard-reset nRST
+    }else{
+        _nodemcutool.reset();
+    }
+
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.Connector.prototype.upload" id="apidoc.element.nodemcu-tool.Connector.prototype.upload">
+        function <span class="apidocSignatureSpan">nodemcu-tool.Connector.prototype.</span>upload
+        <span class="apidocSignatureSpan">(localName, remoteName, options, completeCb, progressCb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">upload = function (localName, remoteName, options, completeCb, progressCb){
+
+    // check connect flag
+    if (!this.isConnected){
+        completeCb(&#x27;Cannot upload file - device offline&#x27;, null);
+        return;
+    }
+
+    // get file content
+    var rawContent = _fs.readFileSync(localName);
+
+    // remove lua comments and empty lines ?
+    if (options.optimize &#x26;&#x26; _path.extname(localName).toLowerCase() == &#x27;.lua&#x27;){
+        // apply optimizations
+        rawContent = _luaOptimizer.optimize(rawContent);
+    }
+
+    // convert buffer to hex
+    var content = rawContent.toString(&#x27;hex&#x27;);
+
+    // get absolute filesize
+    var absoluteFilesize = rawContent.length;
+
+    // split file content into chunks
+    var chunks = content.match(/.{1,232}/g);
+
+    // wrapper to start the transfer
+    var startTransfer = function(){
+        // open remote file for write
+        this.device.executeCommand(_luaCommandBuilder.prepare(&#x27;fileOpen&#x27;, [remoteName, &#x27;w+&#x27;]), function(err, echo, response){
+            // successful opened ?
+            if (err || response == &#x27;nil&#x27;){
+                completeCb(&#x27;Cannot open remote file &#x22;&#x27; + remoteName + &#x27;&#x22; for write - &#x27; + err);
+                return;
+            }
+
+            var currentUploadSize = 0;
+
+            // initial progress update
+            progressCb.apply(progressCb, [0, absoluteFilesize]);
+
+            var writeChunk = function(){
+                if (chunks.length &#x3e; 0){
+                    // get first element
+                    var l = chunks.shift();
+
+                    // increment size counter
+                    currentUploadSize += l.length/2 ;
+
+                    // write first element to file
+                    this.device.executeCommand(&#x27;__hexwrite(&#x22;&#x27; + l + &#x27;&#x22;)&#x27;, function(err, echo, response){
+                        if (err){
+                            completeCb(&#x27;Cannot write chunk to remote file - &#x27; + err, null);
+                            return;
+                        }
+
+                        // run progress callback
+                        progressCb.apply(progressCb, [currentUploadSize, absoluteFilesize]);
+
+                        // write next line
+                        writeChunk();
+                    });
+                }else{
+                    // send file close command
+                    this.device.executeCommand(_luaCommandBuilder.command.fileCloseFlush, function(err, echo, response){
+                        if (err){
+                            completeCb(&#x27;Cannot flush/close remote file - &#x27; + err, null);
+                        }else{
+                            completeCb(null, absoluteFilesize);
+                        }
+
+                    });
+                }
+
+            }.bind(this);
+
+            // start transfer
+            writeChunk();
+
+        }.bind(this));
+    }.bind(this);
+
+
+    // hex write helper already uploaded within current session ?
+    if (this.isHexWriteHelperUploaded){
+        // start transfer directly
+        startTransfer();
+
+    // otherwise upload helper
+    }else{
+        // transfer helper function to decode hex data
+        this.device.executeCommand(_luaCommandBuilder.command.hexWriteHelper, function(err, echo, response) {
+            // successful opened ?
+            if (err) {
+                completeCb(&#x27;Cannot transfer hex.decode helper function - &#x27; + err);
+                return;
+            }
+
+            // set flag
+            this.isHexWriteHelperUploaded = true;
+
+            // start file transfer on upload complete
+            startTransfer();
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+_logger.error(&#x27;No files provided for upload (empty file-list)&#x27;);
+return;
+        }
+
+        // handle multiple uploads
+        var currentFileNumber = 0;
+
+        _nodemcutool.<span class="apidocCodeKeywordSpan">upload</span>(localFiles, options, function(current, total, fileNumber){
+
+// new file ?
+if (currentFileNumber != fileNumber){
+    bar.stop();
+    currentFileNumber = fileNumber;
+    bar.start(total, 1);
+}else{
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nodemcu-tool.LuaCommandBuilder" id="apidoc.module.nodemcu-tool.LuaCommandBuilder">module nodemcu-tool.LuaCommandBuilder</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.LuaCommandBuilder.prepare" id="apidoc.element.nodemcu-tool.LuaCommandBuilder.prepare">
+        function <span class="apidocSignatureSpan">nodemcu-tool.LuaCommandBuilder.</span>prepare
+        <span class="apidocSignatureSpan">(commandName, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prepare = function (commandName, args){
+    // get command by name
+    var command = lua_commands[commandName] || null;
+
+    // valid command name provided ?
+    if (command == null){
+        return null;
+    }
+
+    // replace all placeholders with given args
+    args.forEach(function(arg){
+        // simple escaping quotes
+        arg = arg.replace(/[^\\]&#x22;/g, &#x27;\&#x22;&#x27;);
+
+        // apply arg
+        command = command.replace(/\?/, arg);
+    });
+
+    return command;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    .option(&#x27;--run &#x3c;filename&#x3e;&#x27;, &#x27;Running a file on NodeMCU before starting the terminal session&#x27;,
+false)
+    .action(function(opt){
+        var options = cliPrepare(opt);
+
+        // run a initial command on startup ?
+        var initialCommand = null;
+        if (options.run){
+            initialCommand = _luaCommandBuilder.<span class="apidocCodeKeywordSpan">prepare</span>(&#x27;run&#x27;, [options.run
+]);
+        }
+
+        // start terminal session
+        _nodemcutool.terminal(initialCommand);
+    });
+
+_cli
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nodemcu-tool.LuaOptimizer" id="apidoc.module.nodemcu-tool.LuaOptimizer">module nodemcu-tool.LuaOptimizer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.LuaOptimizer.optimize" id="apidoc.element.nodemcu-tool.LuaOptimizer.optimize">
+        function <span class="apidocSignatureSpan">nodemcu-tool.LuaOptimizer.</span>optimize
+        <span class="apidocSignatureSpan">(rawContent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function optimizeLuaContent(rawContent){
+    // apply optimizations
+    var t = rawContent.toString(&#x27;utf-8&#x27;)
+        .replace(/--.*$/gim, &#x27;&#x27;)
+        .replace(/(\r\n|\n\r|\n|\r)+/g, &#x27;$1&#x27;)
+        .replace(/^\s+/gm, &#x27;&#x27;)
+        .trim();
+
+    // re-convert to buffer
+    return new Buffer(t, &#x27;utf-8&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nodemcu-tool.ScriptableSerialTerminal" id="apidoc.module.nodemcu-tool.ScriptableSerialTerminal">module nodemcu-tool.ScriptableSerialTerminal</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.ScriptableSerialTerminal.ScriptableSerialTerminal" id="apidoc.element.nodemcu-tool.ScriptableSerialTerminal.ScriptableSerialTerminal">
+        function <span class="apidocSignatureSpan">nodemcu-tool.</span>ScriptableSerialTerminal
+        <span class="apidocSignatureSpan">(delimiterSequence)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ScriptableSerialTerminal(delimiterSequence){
+    this.device = null;
+    this.inputbuffer = [];
+    this.waitingForInput = null;
+    this.errorHandler = null;
+    this.delimiterSequence = delimiterSequence;
+    this.encoding = &#x27;utf8&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nodemcu-tool.ScriptableSerialTerminal.prototype" id="apidoc.module.nodemcu-tool.ScriptableSerialTerminal.prototype">module nodemcu-tool.ScriptableSerialTerminal.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.ScriptableSerialTerminal.prototype.close" id="apidoc.element.nodemcu-tool.ScriptableSerialTerminal.prototype.close">
+        function <span class="apidocSignatureSpan">nodemcu-tool.ScriptableSerialTerminal.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function (){
+    if (this.device.isOpen()){
+        this.device.close();
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// list files on SPIFFS
+listFiles: &#x27;local l = file.list();for k,v in pairs(l) do uart.write(0,k..&#x22;:&#x22;..v..&#x22;;&#x22;) end print(&#x22;&#
+x22;)&#x27;,
+
+// file open
+fileOpen: &#x27;print(file.open(&#x22;?&#x22;, &#x22;?&#x22;))&#x27;,
+
+// close a opened file
+fileClose: &#x27;file.<span class="apidocCodeKeywordSpan">close</span>()&#x27;,
+
+// remove file
+fileRemove: &#x27;file.remove(&#x22;?&#x22;)&#x27;,
+
+// file close &#x26; flush
+fileCloseFlush: &#x27;file.flush() file.close()&#x27;,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.ScriptableSerialTerminal.prototype.executeCommand" id="apidoc.element.nodemcu-tool.ScriptableSerialTerminal.prototype.executeCommand">
+        function <span class="apidocSignatureSpan">nodemcu-tool.ScriptableSerialTerminal.prototype.</span>executeCommand
+        <span class="apidocSignatureSpan">(command, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">executeCommand = function (command, cb){
+    // send command
+    this.write(command + &#x27;\n&#x27;, function(error){
+        // write successful ?
+        if (error) {
+            cb(&#x27;Cannot run command: &#x27; + error, null);
+        }else{
+            // get echo
+            this.getNextResponse(function(data){
+                cb(null, data.echo, data.response);
+            }.bind(this));
+        }
+    }.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.ScriptableSerialTerminal.prototype.flowcontrol" id="apidoc.element.nodemcu-tool.ScriptableSerialTerminal.prototype.flowcontrol">
+        function <span class="apidocSignatureSpan">nodemcu-tool.ScriptableSerialTerminal.prototype.</span>flowcontrol
+        <span class="apidocSignatureSpan">(options, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">flowcontrol = function (options, cb){
+    this.device.set(options, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.ScriptableSerialTerminal.prototype.getNextResponse" id="apidoc.element.nodemcu-tool.ScriptableSerialTerminal.prototype.getNextResponse">
+        function <span class="apidocSignatureSpan">nodemcu-tool.ScriptableSerialTerminal.prototype.</span>getNextResponse
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getNextResponse = function (cb){
+    if (this.inputbuffer.length &#x3e; 0){
+        cb(this.inputbuffer.shift());
+    }else{
+        // add as waiting instance (no concurrent!)
+        this.waitingForInput = cb;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    // send command
+    this.write(command + &#x27;\n&#x27;, function(error){
+        // write successful ?
+        if (error) {
+            cb(&#x27;Cannot run command: &#x27; + error, null);
+        }else{
+            // get echo
+            this.<span class="apidocCodeKeywordSpan">getNextResponse</span>(function(data){
+                cb(null, data.echo, data.response);
+            }.bind(this));
+        }
+    }.bind(this));
+};
+
+// remove unread input
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.ScriptableSerialTerminal.prototype.onError" id="apidoc.element.nodemcu-tool.ScriptableSerialTerminal.prototype.onError">
+        function <span class="apidocSignatureSpan">nodemcu-tool.ScriptableSerialTerminal.prototype.</span>onError
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onError = function (cb){
+    this.errorHandler = cb;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.ScriptableSerialTerminal.prototype.open" id="apidoc.element.nodemcu-tool.ScriptableSerialTerminal.prototype.open">
+        function <span class="apidocSignatureSpan">nodemcu-tool.ScriptableSerialTerminal.prototype.</span>open
+        <span class="apidocSignatureSpan">(devicename, baudrate, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">open = function (devicename, baudrate, cb){
+
+    // try to open the serial port
+    this.device = new _serialport(devicename, {
+        baudrate: parseInt(baudrate),
+        parser: _serialport.parsers.byteDelimiter(this.delimiterSequence),
+        autoOpen: false
+    });
+
+    // handle errors
+    this.device.on(&#x27;error&#x27;, function(error){
+        // proxy
+        if (this.errorHandler){
+            this.errorHandler.apply(this, [error]);
+        }else{
+            _logger.error(error);
+        }
+
+        // device opened ?
+        if (this.device.isOpen()){
+            this.device.close();
+        }
+    }.bind(this));
+
+    // listen on incoming data
+    this.device.on(&#x27;data&#x27;, function(input){
+
+        // strip delimiter sequence from array
+        input.splice(input.length-this.delimiterSequence.length, this.delimiterSequence.length);
+
+        // convert byte array UTF8 to string;
+        input = (new Buffer(input)).toString(this.encoding);
+
+        // response data object - default no response data
+        var data = {
+            echo: input,
+            response: null
+        };
+
+        // response found ? split echo and response
+        var splitIndex = input.indexOf(&#x27;\n&#x27;);
+        if (splitIndex &#x3e; 0){
+            data.echo = input.substr(0, splitIndex).trim();
+            data.response = input.substr(splitIndex + 1).trim();
+        }
+
+        // process waiting for input ?
+        if (this.waitingForInput){
+            var t = this.waitingForInput;
+            this.waitingForInput = null;
+            t.apply(t, [data])
+        }else{
+            this.inputbuffer.push(data);
+        }
+
+    }.bind(this));
+
+    // open connection
+    this.device.open(cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+String: Lorem ipsum dolor sit amet, consetetur sadipscing elitr
+```
+
+Behind the Scene
+----------------
+Many beginners may ask how the tool is working because there is no binary interface documented like FTP to access files.
+
+The answer is quite simple: **NodeMCU-Tool** implements a serial terminal connection to the Module and runs some command line based
+ lua commands like file.<span class="apidocCodeKeywordSpan">open</span>(), file.write() to access the filesystem. That&#x27;s it
+!
+
+Since Version 1.2 it&#x27;s also possible to transfer **binary** files to your device. NodeMCU-Tool uses a hexadecimal encode/decoding
+ to transfer the files binary save!
+The required encoding (file downloads) / decoding (file uploads) functions are automatically uploaded on each operation.
+
+### Systems Architecture ###
+
+The Tool is separated into the following components (ordered by its invocation)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.ScriptableSerialTerminal.prototype.purge" id="apidoc.element.nodemcu-tool.ScriptableSerialTerminal.prototype.purge">
+        function <span class="apidocSignatureSpan">nodemcu-tool.ScriptableSerialTerminal.prototype.</span>purge
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">purge = function (cb){
+    // flush input buffer
+    this.device.flush(function(error){
+        // flush readline buffer
+        this.inputbuffer = [];
+
+        // run callback
+        if (cb){
+            cb.apply(this, [error]);
+        }
+    }.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.ScriptableSerialTerminal.prototype.write" id="apidoc.element.nodemcu-tool.ScriptableSerialTerminal.prototype.write">
+        function <span class="apidocSignatureSpan">nodemcu-tool.ScriptableSerialTerminal.prototype.</span>write
+        <span class="apidocSignatureSpan">(data, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (data, cb){
+    this.device.write(data, function(error){
+        if (error){
+            cb(error, null);
+        }else{
+            this.device.drain(cb);
+        }
+    }.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+String: Lorem ipsum dolor sit amet, consetetur sadipscing elitr
+```
+
+Behind the Scene
+----------------
+Many beginners may ask how the tool is working because there is no binary interface documented like FTP to access files.
+
+The answer is quite simple: **NodeMCU-Tool** implements a serial terminal connection to the Module and runs some command line based
+ lua commands like file.open(), file.<span class="apidocCodeKeywordSpan">write</span>() to access the filesystem. That&#x27;s it
+!
+
+Since Version 1.2 it&#x27;s also possible to transfer **binary** files to your device. NodeMCU-Tool uses a hexadecimal encode/decoding
+ to transfer the files binary save!
+The required encoding (file downloads) / decoding (file uploads) functions are automatically uploaded on each operation.
+
+### Systems Architecture ###
+
+The Tool is separated into the following components (ordered by its invocation)
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nodemcu-tool.SerialTerminal" id="apidoc.module.nodemcu-tool.SerialTerminal">module nodemcu-tool.SerialTerminal</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.SerialTerminal.SerialTerminal" id="apidoc.element.nodemcu-tool.SerialTerminal.SerialTerminal">
+        function <span class="apidocSignatureSpan">nodemcu-tool.</span>SerialTerminal
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SerialTerminal(){
+    this.device = null;
+    this.errorHandler = null;
+    this.connectHandler = null;
+    this.encoding = &#x27;utf8&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nodemcu-tool.SerialTerminal.prototype" id="apidoc.module.nodemcu-tool.SerialTerminal.prototype">module nodemcu-tool.SerialTerminal.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.SerialTerminal.prototype.close" id="apidoc.element.nodemcu-tool.SerialTerminal.prototype.close">
+        function <span class="apidocSignatureSpan">nodemcu-tool.SerialTerminal.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function (){
+    if (this.device.isOpen()){
+        this.device.close();
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// list files on SPIFFS
+listFiles: &#x27;local l = file.list();for k,v in pairs(l) do uart.write(0,k..&#x22;:&#x22;..v..&#x22;;&#x22;) end print(&#x22;&#
+x22;)&#x27;,
+
+// file open
+fileOpen: &#x27;print(file.open(&#x22;?&#x22;, &#x22;?&#x22;))&#x27;,
+
+// close a opened file
+fileClose: &#x27;file.<span class="apidocCodeKeywordSpan">close</span>()&#x27;,
+
+// remove file
+fileRemove: &#x27;file.remove(&#x22;?&#x22;)&#x27;,
+
+// file close &#x26; flush
+fileCloseFlush: &#x27;file.flush() file.close()&#x27;,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.SerialTerminal.prototype.getDevice" id="apidoc.element.nodemcu-tool.SerialTerminal.prototype.getDevice">
+        function <span class="apidocSignatureSpan">nodemcu-tool.SerialTerminal.prototype.</span>getDevice
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDevice = function (){
+    return this.device;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.SerialTerminal.prototype.onConnect" id="apidoc.element.nodemcu-tool.SerialTerminal.prototype.onConnect">
+        function <span class="apidocSignatureSpan">nodemcu-tool.SerialTerminal.prototype.</span>onConnect
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onConnect = function (cb){
+    this.connectHandler = cb;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemcu-tool.SerialTerminal.prototype.passthrough" id="apidoc.element.nodemcu-tool.SerialTerminal.prototype.passthrough">
+        function <span class="apidocSignatureSpan">nodemcu-tool.SerialTerminal.prototype.</span>passthrough
+        <span class="apidocSignatureSpan">(devicename, baudrate, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">passthrough = function (devicename, baudrate, cb){
+
+    // try to open the serial port
+    this.device = new _serialport(devicename, {
+        baudrate: parseInt(baudrate),
+        parser: _serialport.parsers.byteLength(1),
+        autoOpen: false
+    });
+
+    // handle errors
+    this.device.on(&#x27;error&#x27;, function(err){
+        // proxy
+        _logger.error(err);
+
+        // device opened ?
+        if (this.device.isOpen()){
+            this.device.close();
+        }
+    }.bind(this));
+
+    // listen on incoming data
+    this.device.on(&#x27;data&#x27;, function(input){
+        process.stdout.write(input);
+    }.bind(this));
+
+    // open connection
+    this.device.open(function(error){
+        if (error){
+            cb(error);
+        }else{
+
+            // prepare
+            if (process.stdin.isTTY){
+                process.stdin.setRawMode(true);
+            }
+
+            process.stdin.setEncoding(&#x27;utf8&#x27;);
+
+            // pass-through
+            process.stdin.on(&#x27;data&#x27;, function(data){
+                // ctrl-c
+                if (data == &#x27;\u0003&#x27;){
+                    this.device.close();
+                    cb(null);
+                    process.exit();
+                }
+                this.device.write(data);
+            }.bind(this));
+
+            // run connect handler ?
+            if (this.connectHandler){
+                this.connectHandler.apply(this.connectHandler, [this.device]);
+            }
+        }
+    }.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
